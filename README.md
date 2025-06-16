@@ -1,4 +1,4 @@
-# Explosion Risk Estimation Tool (TLM Luftstoss)
+# Explosion Risk Estimation Tool (TLM)
 
 This R project calculates the overpressure and impulse duration for explosions in bunker chambers, following formulas from the TLM Luftstoss standard.
 
