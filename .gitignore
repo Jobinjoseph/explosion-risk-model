@@ -1,0 +1,14 @@
+# RStudio and R
+.Rhistory
+.RData
+.Rproj.user/
+*.Rproj
+
+# Data
+*.xlsx
+*.csv
+ergebnisse/
+data/
+
+# Config
+config.R

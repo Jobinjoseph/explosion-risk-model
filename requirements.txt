@@ -1,0 +1,7 @@
+httr
+Microsoft365R
+readxl
+openxlsx
+tools
+ggplot2
+dplyr
