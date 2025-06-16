@@ -8,29 +8,29 @@ library(tools)
 library(ggplot2)
 library(dplyr)
 #---- Direkt zugang zum Sharepoint folder----
-site <- sharepoint_site("https://emchberger.sharepoint.com/sites/BereichXY")
+site <- sharepoint_site("xxxxx")
 drive <- site$get_drive()
 drive$list_items()
-items <- drive$list_items("02_Projekte/MSB251xxx_RA_Anlage_Isleten/4_PLAN/R_Files")
+items <- drive$list_items("xxxxx")
 print(items)
 drive$download_file(
-  item_id = "01G7U5EESNGJLKCEWFKZF24PWDQBQF36AV",
+  item_id = "xxxxx",
   dest = "results.xlsx"
 )
-url<-"https://emchberger.sharepoint.com/:f:/r/sites/BereichXY/Freigegebene%20Dokumente/02_Projekte/MSB251xxx_RA_Anlage_Isleten/4_PLAN/R_Files?csf=1&web=1&e=BAA8SL"
+url<-"xxxxx/xx/xxx"
 GET(url, write_disk("results.xlsx", overwrite = TRUE))
 
 #---- Direkt zugang zur Lokalen OneDrive----
-setwd("C:/Users/joseph/Emch+Berger Gruppe/EBBE_PRJ_SHB - R_Files/")
+setwd("xxxx/")
 
 # Source the functions 
 srcDir <- paste0(getwd(),"/")      # aktueller Ordner
-file <- "WA_Isletten_functions.R"
+file <- "WA_Lager_functions.R"
 source(paste(srcDir,file, sep=""))
 
 
 #---- path input Excel file ----
-file_path <- paste0(srcDir,"Haupt_Liste_Kammer_102.xlsx")
+file_path <- paste0(srcDir,"Haupt_Liste_Kammer_xxx.xlsx")
 sheet_name_1 <- "Kammern"
 sheet_name_2 <- "Stollen"
 sheet_name_3 <- "Exposition"
