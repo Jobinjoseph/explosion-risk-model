@@ -345,7 +345,7 @@ for (kammer in unique_kammer_values) {
         t <- t_WR(p, t, chi, LR)
       }
     }, error = function(e) {
-      cat("⚠️ Error in processing element:", Element, "at row", i, "in Kammer", kammer, "\n")
+      cat("Error in processing element:", Element, "at row", i, "in Kammer", kammer, "\n")
       cat("→", conditionMessage(e), "\n")
     })
     
@@ -390,11 +390,11 @@ timestamp <- format(Sys.Date(), "%Y%m%d")
 
 summary_file <- paste0("ergebnisse/intermediate_results_", timestamp, ".csv")
 write.csv(intermediate_results, file = summary_file, row.names = FALSE)
-cat("✅ Final summary saved to", summary_file, "\n")
+cat("Final summary saved to", summary_file, "\n")
 
 detailed_file <- paste0("ergebnisse/detailed_intermediate_values_", timestamp, ".csv")
 write.csv(detailed_intermediate_values, file = detailed_file, row.names = FALSE)
-cat("✅ Detailed intermediate values saved to", detailed_file, "\n")
+cat("Detailed intermediate values saved to", detailed_file, "\n")
 
 
 
@@ -516,7 +516,7 @@ for (kammer in unique_kammer_values) {
       }
       
     }, error = function(e) {
-      cat("⚠️ Error in processing element:", Element, "at row", i, "in Kammer", kammer, "\n")
+      cat("Error in processing element:", Element, "at row", i, "in Kammer", kammer, "\n")
       cat("→", conditionMessage(e), "\n")
     })
     
@@ -591,7 +591,7 @@ for (kammer in unique_kammer_values) {
 
 timestamp <- format(Sys.Date(), "%Y%m%d")
 write.csv(final_ratio_output, paste0("ergebnisse/final_ratio_output_", timestamp, ".csv"), row.names = FALSE)
-cat("✅ Correct ratio output saved with accurate Schlüsselwerte.\n")
+cat("Correct ratio output saved with accurate Schlüsselwerte.\n")
 
 
 #---- Abschnitt 2: Exposition ----
