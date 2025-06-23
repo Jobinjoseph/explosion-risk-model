@@ -104,7 +104,7 @@ tau <- function(data) {
 # t<- 1256.152
 # tau<-0.001
 p_WR <- function(p, tau, chi, LR) {
-  cat("📥 Inside p_WR → p:", p,  " | tau:", tau, " | chi:", chi, " | LR:", LR, "\n")
+  cat("Inside p_WR → p:", p,  " | tau:", tau, " | chi:", chi, " | LR:", LR, "\n")
   if (LR == 0) {
     return(p)
   } else {
@@ -123,13 +123,13 @@ p_WR <- function(p, tau, chi, LR) {
     
     cat("→ P2/P1 ratio:", P2_P1_ratio, "\n")
     p_new <- p * P2_P1_ratio
-    cat("📤 p after scaling:", p_new, "\n")
+    cat("p after scaling:", p_new, "\n")
     return(p_new)
   }
 }
 
 T_WR <- function(p, T, chi, LR) {
-  cat("📥 Inside t_WR → p:", p, " | t:", T, " | chi:", chi, " | LR:", LR, "\n")
+  cat("Inside t_WR → p:", p, " | t:", T, " | chi:", chi, " | LR:", LR, "\n")
   if (LR < 0){
     return(T)
   } else {
@@ -144,13 +144,13 @@ T_WR <- function(p, T, chi, LR) {
     
     cat("→ T2/T1 ratio:", T2_T1_ratio, "\n")
     T_new <- T * T2_T1_ratio
-    cat("📤 t after scaling:", T_new, "\n")
+    cat("t after scaling:", T_new, "\n")
     return(T_new)
   }
 }
 
 p_Verz_1 <- function(P_out, p,alpha_wi, Lo, Lss) {
-  cat("📥 Inside p_Verz_1 → P_out:", P_out, " | alpha_wi:", alpha_wi, "\n")
+  cat("Inside p_Verz_1 → P_out:", P_out, " | alpha_wi:", alpha_wi, "\n")
   if (Lo >= 2 * Lss) {
     scale_factor <- 0.9
   } else {
@@ -158,12 +158,12 @@ p_Verz_1 <- function(P_out, p,alpha_wi, Lo, Lss) {
   }
   cat("→ scale_factor:", scale_factor, "\n")
   p_new <- p * scale_factor
-  cat("📤 p after scaling:", p_new, "\n")
+  cat("p after scaling:", p_new, "\n")
   return(p_new)
 }
 
   p_Verz_2 <- function(P_out, p, Lo, Lss) {
-  cat("📥 Inside p_Verz_2 → P_out:", P_out, "\n")
+  cat("Inside p_Verz_2 → P_out:", P_out, "\n")
   if (Lo >= 2 * Lss) {
     scale_factor <- 0.9
   } else {
@@ -171,12 +171,12 @@ p_Verz_1 <- function(P_out, p,alpha_wi, Lo, Lss) {
   }
   cat("→ scale_factor:", scale_factor, "\n")
   p_new <- p * scale_factor
-  cat("📤 p after scaling:", p_new, "\n")
+  cat("p after scaling:", p_new, "\n")
   return(p_new)
   }
   
   p_Verz_3 <- function(P_out, p, alpha_wi, Lo, Lss) {
-  cat("📥 Inside p_Verz_3 → P_out:", P_out, " | alpha_wi:", alpha_wi, "\n")
+  cat("Inside p_Verz_3 → P_out:", P_out, " | alpha_wi:", alpha_wi, "\n")
   if (Lo >= 2 * Lss) {
     scale_factor <- 0.9
   } else {
@@ -184,12 +184,12 @@ p_Verz_1 <- function(P_out, p,alpha_wi, Lo, Lss) {
   }
   cat("→ scale_factor:", scale_factor, "\n")
   p_new <- p * scale_factor
-  cat("📤 p after scaling:", p_new, "\n")
+  cat("p after scaling:", p_new, "\n")
   return(p_new)
   }
   
   p_Verz_4 <- function(P_out, p, alpha_wi, Lo, Lss) {
-  cat("📥 Inside p_Verz_4 → P_out:", P_out, " | alpha_wi:", alpha_wi, "\n")
+  cat("Inside p_Verz_4 → P_out:", P_out, " | alpha_wi:", alpha_wi, "\n")
   if (Lo >= 2 * Lss) {
     scale_factor <- 0.9
   } else {
@@ -201,51 +201,51 @@ p_Verz_1 <- function(P_out, p,alpha_wi, Lo, Lss) {
   }
   cat("→ scale_factor:", scale_factor, "\n")
   p_new <- p * scale_factor
-  cat("📤 p after scaling:", p_new, "\n")
+  cat("p after scaling:", p_new, "\n")
   return(p_new)
   }
   
   p_BL <- function(p, F1, F2) {
-  cat("📥 Inside p_BL → F1:", F1, " | F2:", F2, "\n")
+  cat("Inside p_BL → F1:", F1, " | F2:", F2, "\n")
   Z <- sqrt(F2 / F1)
   scale_factor <- (1 / 1000) * (-529.37 * Z^3 + 496.26 * Z^2 + 1038.20 * Z - 6.99)
   cat("→ Z:", Z, " | scale_factor:", scale_factor, "\n")
   p_new <- p * scale_factor
-  cat("📤 p after scaling:", p_new, "\n")
+  cat("p after scaling:", p_new, "\n")
   return(p_new)
   }
   
   p_PEW <- function(p, F1, F2) {
-  cat("📥 Inside p_PEW → F1:", F1, " | F2:", F2, "\n")
+  cat("Inside p_PEW → F1:", F1, " | F2:", F2, "\n")
   Z <- sqrt(F1 / F2)
   scale_factor <- (1 / 1000) * (2186 * Z^4 - 5285.35 * Z^3 + 4149.94 * Z^2 - 52.61 * Z - 1.23)
   cat("→ Z:", Z, " | scale_factor:", scale_factor, "\n")
   p_new <- p * scale_factor
-  cat("📤 p after scaling:", p_new, "\n")
+  cat("p after scaling:", p_new, "\n")
   return(p_new)
   }
   
   T_PEW <- function(T, F1, F2) {
-  cat("📥 Inside T_PEW → F1:", F1, " | F2:", F2, "\n")
+  cat("Inside T_PEW → F1:", F1, " | F2:", F2, "\n")
   scale_factor <- sqrt(F1 / F2)
   cat("→ T:", T, " | scale_factor:", scale_factor, "\n")
   T_new <- T * scale_factor
-  cat("📤 T after scaling:", T_new, "\n")
+  cat("T after scaling:", T_new, "\n")
   return(T_new)
   }
   
   p_KEW <- function(p, F1, F2) {
-  cat("📥 Inside p_KEW → F1:", F1, " | F2:", F2, "\n")
+  cat("Inside p_KEW → F1:", F1, " | F2:", F2, "\n")
   Z <- sqrt(F1 / F2)
   scale_factor <- (1 / 1000) * (1866.65 * Z^4 - 4127.46 * Z^3 + 2625.67 * Z^2 + 641.78 * Z - 4.43)
   cat("→ Z:", Z, " | scale_factor:", scale_factor, "\n")
   p_new <- p * scale_factor
-  cat("📤 p after scaling:", p_new, "\n")
+  cat("p after scaling:", p_new, "\n")
   return(p_new)
   }
   
   p_PVE <- function(p, F1, F2) {
-  cat("📥 Inside p_PVE → p:", p, " | F1:", F1, " | F2:", F2, "\n")
+  cat("Inside p_PVE → p:", p, " | F1:", F1, " | F2:", F2, "\n")
   x <- F2 / F1
   cat("→ x = F2 / F1 =", x, "\n")
   
@@ -256,28 +256,28 @@ p_Verz_1 <- function(P_out, p,alpha_wi, Lo, Lss) {
   cat("→ scale_factor:", scale_factor, "\n")
   
   p_new <- p * scale_factor
-  cat("📤 p after scaling:", p_new, "\n")
+  cat("p after scaling:", p_new, "\n")
   return(p_new)
   }
   
   
   p_KVE <- function(p, F1, F2) {
-  cat("📥 Inside p_KVE → F1:", F1, " | F2:", F2, "\n")
+  cat("Inside p_KVE → F1:", F1, " | F2:", F2, "\n")
   t_local <- sqrt(F2 / F1) - 0.08
   scale_factor <- (1 / 1000) * (-2049.44 * t_local^3 + 3565.65 * t_local^2 - 4059.30 * t_local + 3425.46)
   cat("→ t_local:", t_local, " | scale_factor:", scale_factor, "\n")
   p_new <- p * scale_factor
-  cat("📤 p after scaling:", p_new, "\n")
+  cat("p after scaling:", p_new, "\n")
   return(p_new)
   }
   
   p_SM <- function(p,tau, chi, LR) {
-  cat("📥 Inside p_SM → calling p_WR\n")
+  cat("Inside p_SM → calling p_WR\n")
   p_new <- p_WR(p, tau, chi, LR)
   if (p <= 0) {
     p <- 1e-6
   }
-  cat("📤 p after p_WR (inside p_SM):", p_new, "\n")
+  cat("p after p_WR (inside p_SM):", p_new, "\n")
   return(p_new)
   }
   
